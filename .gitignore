@@ -1,7 +1,7 @@
 # See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
 #Archivos ignorados en commit
-/Unidad 1/tools/toolsface.xml
+/Antes de Vacaciones/tools/toolsface.xml
 /entornoIA/*
 /1_Proyecto_Rostros/tools/*
 /2_Proyecto_Wally/tools/*
