@@ -3,3 +3,11 @@
 #Archivos ignorados en commit
 /Unidad 1/tools/toolsface.xml
 /entornoIA/*
+/1_Proyecto_Rostros/tools/*
+/2_Proyecto_Wally/tools/*
+/2_Proyecto_Wally/Img/W/classifier/*
+/2_Proyecto_Wally/Img/W/neg.lst
+/2_Proyecto_Wally/Img/W/pos_samples.vec
+/2_Proyecto_Wally/Img/W/pos.lst
+
+
