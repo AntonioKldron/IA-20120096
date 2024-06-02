@@ -5,8 +5,8 @@ import os
 carpeta_imagenes = 'C:/Projects/ITM/INTELIGENCIA ARTIFICIAL/4_Proyecto_CNN/Img/Tornados'
 
 # Tamaño al que se redimensionarán las imágenes
-nuevo_ancho = 28
-nuevo_alto = 21
+nuevo_ancho = 40
+nuevo_alto = 40
 
 # Obtener la lista de nombres de archivo de las imágenes en la carpeta
 archivos_imagenes = os.listdir(carpeta_imagenes)
