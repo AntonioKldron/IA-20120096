@@ -2,11 +2,11 @@ import cv2
 import os
 
 # Ruta de la carpeta que contiene las imágenes
-carpeta_imagenes = 'C:/Projects/ITM/INTELIGENCIA ARTIFICIAL/4_Proyecto_CNN/Img/Tornados'
+carpeta_imagenes = 'C:/Projects/ITM/INTELIGENCIA ARTIFICIAL/4_Proyecto_CNN/Img/robo'
 
 # Tamaño al que se redimensionarán las imágenes
-nuevo_ancho = 40
-nuevo_alto = 40
+nuevo_ancho = 17
+nuevo_alto = 17
 
 # Obtener la lista de nombres de archivo de las imágenes en la carpeta
 archivos_imagenes = os.listdir(carpeta_imagenes)
