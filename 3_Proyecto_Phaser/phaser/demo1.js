@@ -217,6 +217,28 @@ function detenerse() {
     jugador.body.velocity.x = 0; // Detener movimiento del jugador
 }
 
+// Función para actualizar el estado del juego en cada frame
+function actualizar() {
+    fondo.tilePosition.x -= 1; // Desplazar el fondo hacia la izquierda
+
+    // Manejar colisiones entre el jugador y las naves y balas
+    juego.physics.arcade.collide(jugador, nave, colisionH, null, this);
+    juego.physics.arcade.collide(jugador, bala, colisionH, null, this);
+    juego.physics.arcade.collide(jugador, bala2, colisionH, null, this);
+    juego.physics.arcade.collide(jugador, bala3, colisionH, null, this);
+
+    var enSuelo = jugador.body.onFloor(); // Verificar si el jugador está en el suelo
+    var enAire = !enSuelo || jugador.body.velocity.y != 0; // Verificar si el jugador está en el aire
+
+    if (!modoAuto) { // Si el modo automático no está activado
+        manejarControlManual(enSuelo, enAire); // Manejar el control manual del jugador
+    } else if (modoAuto && enSuelo) { // Si el modo automático está activado y el jugador está en el suelo
+        manejarControlAutomatico(enSuelo, enAire); // Manejar el control automático del jugador
+    }
+
+    actualizarBalas(); // Actualizar el estado de las balas
+}
+
 // Función para manejar el control manual del jugador
 function manejarControlManual(enSuelo, enAire) {
     if (salto.isDown) { // Si la tecla de salto está presionada
@@ -265,28 +287,6 @@ function manejarMovimiento(enSuelo, enAire) {
     } else {
         detenerse(); // Detener al jugador
     }
-}
-
-// Función para actualizar el estado del juego en cada frame
-function actualizar() {
-    fondo.tilePosition.x -= 1; // Desplazar el fondo hacia la izquierda
-
-    // Manejar colisiones entre el jugador y las naves y balas
-    juego.physics.arcade.collide(jugador, nave, colisionH, null, this);
-    juego.physics.arcade.collide(jugador, bala, colisionH, null, this);
-    juego.physics.arcade.collide(jugador, bala2, colisionH, null, this);
-    juego.physics.arcade.collide(jugador, bala3, colisionH, null, this);
-
-    var enSuelo = jugador.body.onFloor(); // Verificar si el jugador está en el suelo
-    var enAire = !enSuelo || jugador.body.velocity.y != 0; // Verificar si el jugador está en el aire
-
-    if (!modoAuto) { // Si el modo automático no está activado
-        manejarControlManual(enSuelo, enAire); // Manejar el control manual del jugador
-    } else if (modoAuto && enSuelo) { // Si el modo automático está activado y el jugador está en el suelo
-        manejarControlAutomatico(enSuelo, enAire); // Manejar el control automático del jugador
-    }
-
-    actualizarBalas(); // Actualizar el estado de las balas
 }
 
 // Función para manejar el control automático del jugador
